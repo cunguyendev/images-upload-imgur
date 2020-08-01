@@ -13,7 +13,32 @@
   </head>
   <body>
     <!-- Main app -->
-    <main class="app"></main>
+    <main class="app">
+      <!-- App heading -->
+      <div class="app__heading heading">
+        <h1 class="heading__title">Imgur Upload API</h1>
+        <p class="heading__description">Use JavaScript To Upload Image</p>
+      </div>
+
+      <!-- App drop zone -->
+      <div class="app__dropzone dropzone">
+        <div class="dropzone__instruction">
+          <img
+            class="dropzone__instruction__icon"
+            src="./assets/images/upload-to-the-cloud.svg"
+          />
+          <p class="dropzone__instruction__text">
+            Drop an image file here or click here to select image
+          </p>
+        </div>
+        <input type="file" class="input" accept="image/*" />
+      </div>
+
+      <!-- Lading area -->
+      <div class="app__loading loading">
+        <img class="loading__icon" src="./assets/images/loading-spin.svg" />
+      </div>
+    </main>
   </body>
 
   <script src="./scripts/index.js"></script>
