@@ -17,6 +17,7 @@ class App {
     this.information = 'information';
     this.warning = ' warning';
     this.success = 'success';
+    this.responseArea = document.querySelector('.data-response');
     this.notificationController = new NotificationController();
   }
 
@@ -37,9 +38,9 @@ class App {
    */
   isShowLoadingStatus(status) {
     if (status) {
-      this.loading.style.display = 'block';
+      this.loading.classList.add('d-block');
     } else {
-      this.loading.style.display = 'none';
+      this.loading.classList.remove('d-block');
     }
   }
 
@@ -49,6 +50,8 @@ class App {
    */
   checkFiles(file) {
     this.isShowLoadingStatus(true);
+    this.responseArea.classList.remove('d-flex');
+    this.responseArea.classList.add('d-none');
 
     if (file.type.match(/image/) && file.type !== 'image/svg+xml') {
       const data = new FormData();
@@ -61,6 +64,8 @@ class App {
           "Your image was uploaded successfully. It's will show you in a few seconds.";
         this.isShowLoadingStatus(false);
         this.notificationController.displayNotification(this.success, message);
+        this.responseArea.classList.remove('d-none');
+        this.responseArea.classList.add('d-flex');
       });
     } else {
       const message =
