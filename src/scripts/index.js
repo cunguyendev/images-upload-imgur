@@ -45,6 +45,23 @@ class App {
   }
 
   /**
+   *
+   * @param {File} image
+   */
+  uploadImage(image) {
+    const imgur = new Imgur('4409588f10776f7');
+
+    imgur.post(image, (response) => {
+      const message =
+        "Your image was uploaded successfully. It's will show you in a few seconds.";
+      this.isShowLoadingStatus(false);
+      this.notificationController.displayNotification(this.success, message);
+      this.responseArea.classList.remove('d-none');
+      this.responseArea.classList.add('d-flex');
+    });
+  }
+
+  /**
    * Check files import
    * @param {File} file
    */
@@ -57,16 +74,7 @@ class App {
       const data = new FormData();
       data.append('image', file);
 
-      const imgur = new Imgur('4409588f10776f7');
-
-      imgur.post(data, (response) => {
-        const message =
-          "Your image was uploaded successfully. It's will show you in a few seconds.";
-        this.isShowLoadingStatus(false);
-        this.notificationController.displayNotification(this.success, message);
-        this.responseArea.classList.remove('d-none');
-        this.responseArea.classList.add('d-flex');
-      });
+      this.uploadImage(data);
     } else {
       const message =
         'It looks like you have uploaded a file that is not an image type. Please re-check and try again.';
