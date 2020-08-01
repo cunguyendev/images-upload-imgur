@@ -3,6 +3,7 @@
  * Scripts for app
  */
 
+import NotificationController from './controllers/notificationController';
 import Imgur from './imgur';
 
 class App {
@@ -11,6 +12,12 @@ class App {
    */
   constructor() {
     this.dropzone = document.querySelector('.dropzone');
+    this.loading = document.querySelector('.loading');
+    this.error = 'error';
+    this.information = 'information';
+    this.warning = ' warning';
+    this.success = 'success';
+    this.notificationController = new NotificationController();
   }
 
   /**
@@ -20,7 +27,20 @@ class App {
     /**
      * Bind events in the app
      */
+    this.notificationController.init();
     this.bindEventListener();
+  }
+
+  /**
+   * Handle for showing the loading status
+   * @param {Boolean} status
+   */
+  isShowLoadingStatus(status) {
+    if (status) {
+      this.loading.style.display = 'block';
+    } else {
+      this.loading.style.display = 'none';
+    }
   }
 
   /**
@@ -28,6 +48,8 @@ class App {
    * @param {File} file
    */
   checkFiles(file) {
+    this.isShowLoadingStatus(true);
+
     if (file.type.match(/image/) && file.type !== 'image/svg+xml') {
       const data = new FormData();
       data.append('image', file);
@@ -35,10 +57,16 @@ class App {
       const imgur = new Imgur('4409588f10776f7');
 
       imgur.post(data, (response) => {
-        console.log(response.data.link);
+        const message =
+          "Your image was uploaded successfully. It's will show you in a few seconds.";
+        this.isShowLoadingStatus(false);
+        this.notificationController.displayNotification(this.success, message);
       });
     } else {
-      console.log('Invalid archive');
+      const message =
+        'It looks like you have uploaded a file that is not an image type. Please re-check and try again.';
+      this.notificationController.displayNotification(this.error, message);
+      this.isShowLoadingStatus(false);
     }
 
     return this;
