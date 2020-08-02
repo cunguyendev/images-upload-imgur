@@ -5,6 +5,11 @@
   right: 15px;
   display: none;
   z-index: 9999;
+  left: 15px;
+
+  @include sm {
+    left: auto;
+  }
 
   &__description {
     line-height: 23px;
