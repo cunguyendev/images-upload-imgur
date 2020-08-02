@@ -36,10 +36,14 @@
     position: relative;
     margin-right: auto;
     margin-left: auto;
-    max-width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: calc(100% - 30px);
+
+    @include sm {
+      max-width: 50%;
+    }
 
     &__dragging {
       border-color: #000;
@@ -52,6 +56,12 @@
 
       &__icon {
         width: 10%;
+      }
+
+      &__text {
+        padding: 0 15px;
+        margin-top: 10px;
+        text-align: center;
       }
     }
   }
