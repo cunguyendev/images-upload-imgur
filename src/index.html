@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Images optimization example</title>
+    <title>Upload image with Imgur API</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./styles/main.scss" />
   </head>
@@ -12,13 +12,13 @@
     <main class="app">
       <!-- App heading -->
       <div class="app__heading heading">
-        <h1 class="heading__title">Images Optimization Example</h1>
+        <h1 class="heading__title">Upload Image With Imgur API</h1>
         <p class="heading__description">
           <a
-            href="https://github.com/cunguyendev/images-optimize"
+            href="https://github.com/cunguyendev/images-upload-imgur"
             title="View on Github"
           >
-            https://github.com/cunguyendev/images-optimize
+            https://github.com/cunguyendev/images-upload-imgur
           </a>
         </p>
       </div>
@@ -44,15 +44,15 @@
       <!-- Show image area -->
       <div class="app__data-response data-response d-none">
         <div class="data-response__item">
-          <img src="https://img.icons8.com/bubbles/2x/google-logo.png" alt="" />
-          <p>Normal loading</p>
-        </div>
-        <div class="data-response__item">
-          <img src="https://img.icons8.com/bubbles/2x/google-logo.png" alt="" />
-          <p>
-            Loaded with
-            <a href="https://imageoptim.com/" title="imageoptim">imageoptim</a>
-          </p>
+          <img
+            id="the-image"
+            src="https://img.icons8.com/bubbles/2x/google-logo.png"
+            alt="Normal loading"
+          />
+          <div class="data-response__action">
+            <input type="text" id="image-response-url" />
+            <button class="btn btn--default" id="copy-button">Copy</button>
+          </div>
         </div>
       </div>
 
