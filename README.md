@@ -1,6 +1,6 @@
 # Images upload with Imgur
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b9d129e2-8102-48f5-9db7-ea2b92f9c499/deploy-status)](https://images-optimize.netlify.app/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ab0d7047-bb06-4f4e-a783-451c2c10bd8e/deploy-status)](https://images-optimize.netlify.app/)
 
 Created with HTML/CSS/JS, and Parcel (Web application bundle)
 
