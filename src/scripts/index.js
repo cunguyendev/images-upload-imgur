@@ -18,6 +18,9 @@ class App {
     this.warning = ' warning';
     this.success = 'success';
     this.responseArea = document.querySelector('.data-response');
+    this.theImage = document.getElementById('the-image');
+    this.imageUrlDisplay = document.getElementById('image-response-url');
+    this.copyButton = document.getElementById('copy-button');
     this.notificationController = new NotificationController();
   }
 
@@ -58,7 +61,19 @@ class App {
       this.notificationController.displayNotification(this.success, message);
       this.responseArea.classList.remove('d-none');
       this.responseArea.classList.add('d-flex');
+      this.displayImages(response.data.link);
     });
+  }
+
+  /**
+   * Display data to view
+   * @param {String} data
+   */
+  displayImages(image) {
+    this.theImage.setAttribute('src', image);
+    this.imageUrlDisplay.value = image;
+
+    return this;
   }
 
   /**
