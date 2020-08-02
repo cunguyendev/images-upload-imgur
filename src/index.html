@@ -4,10 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Upload image with Imgur API</title>
+    <meta property="title" content="Upload Image With Imgur API" />
+    <meta property="site_name" content="Upload Image With Imgur API" />
+    <meta property="type" content="website" />
+    <meta property="url" content="https://images-upload-imgur.netlify.app" />
+    <meta
+      name="description"
+      content="An app to upload images to Imgur API from HTML/CSS/JS"
+    />
+    <meta
+      property="og:description"
+      content="An app to upload images to Imgur API from HTML/CSS/JS"
+    />
+    <link rel="canonical" href="https://github.com/cunguyendev" />
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./styles/main.scss" />
   </head>
   <body>
+    <!-- Displayed if scripts are not supported -->
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+
     <!-- Main app -->
     <main class="app">
       <!-- App heading -->
@@ -29,6 +47,7 @@
           <img
             class="dropzone__instruction__icon"
             src="./assets/images/upload-to-the-cloud.svg"
+            alt="Upload an image"
           />
           <p class="dropzone__instruction__text">
             Drop an image file here or click here to select image
@@ -46,8 +65,8 @@
         <div class="data-response__item">
           <img
             id="the-image"
-            src="https://img.icons8.com/bubbles/2x/google-logo.png"
-            alt="Normal loading"
+            src="./assets/images/loading-spin.svg"
+            alt="The image uploade"
           />
           <div class="data-response__action">
             <input type="text" id="image-response-url" />
@@ -59,7 +78,11 @@
       <!-- Loading area -->
       <div class="app__loading loading d-none">
         <div class="preloader">
-          <img class="loading__icon" src="./assets/images/loading-spin.svg" />
+          <img
+            class="loading__icon"
+            alt="Loading..."
+            src="./assets/images/loading-spin.svg"
+          />
         </div>
       </div>
 
