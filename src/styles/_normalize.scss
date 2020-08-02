@@ -8,3 +8,19 @@ a {
   color: #1890ff;
   cursor: pointer;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #dbdee5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fb5895;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #87e6ff;
+}
