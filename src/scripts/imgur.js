@@ -27,7 +27,9 @@ class Imgur {
         if (xhttp.status >= 200 && xhttp.status < 300) {
           callBack(JSON.parse(xhttp.responseText));
         } else {
-          throw new Error(`${xhttp.status} - ${xhttp.statusText}`);
+          callBack({
+            status: false,
+          });
         }
       }
     };

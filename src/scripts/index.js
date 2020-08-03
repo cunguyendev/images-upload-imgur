@@ -22,6 +22,7 @@ class App {
     this.imageUrlDisplay = this.qs('#image-response-url');
     this.copyButton = this.qs('#copy-button');
     this.instructionText = this.qs('.dropzone__instruction__text');
+    this.clientKey = process.env.CLIENT_KEY;
     this.notificationController = new NotificationController();
   }
 
@@ -62,16 +63,25 @@ class App {
    * @param {File} image
    */
   uploadImage(image) {
-    const imgur = new Imgur('9d41fa5df737ec2');
+    const imgur = new Imgur(this.clientKey);
 
     imgur.post(image, (response) => {
-      const message =
-        "Your image was uploaded successfully. It's will show you in a few seconds.";
+      if (response.status) {
+        const message =
+          "Your image was uploaded successfully. It's will show you in a few seconds.";
+
+        this.notificationController.displayNotification(this.success, message);
+        this.responseArea.classList.remove('d-none');
+        this.responseArea.classList.add('d-flex');
+        this.displayImages(response.data.link);
+      } else {
+        const message =
+          "Something went wrong. Let's comeback in a few minutes. ";
+
+        this.notificationController.displayNotification(this.error, message);
+      }
+
       this.isShowLoadingStatus(false);
-      this.notificationController.displayNotification(this.success, message);
-      this.responseArea.classList.remove('d-none');
-      this.responseArea.classList.add('d-flex');
-      this.displayImages(response.data.link);
     });
   }
 
