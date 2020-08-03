@@ -11,17 +11,27 @@ class App {
    * Initial the constructor
    */
   constructor() {
-    this.dropzone = document.querySelector('.dropzone');
-    this.loading = document.querySelector('.loading');
+    this.dropzone = this.qs('.dropzone');
+    this.loading = this.qs('.loading');
     this.error = 'error';
     this.information = 'information';
     this.warning = ' warning';
     this.success = 'success';
-    this.responseArea = document.querySelector('.data-response');
-    this.theImage = document.getElementById('the-image');
-    this.imageUrlDisplay = document.getElementById('image-response-url');
-    this.copyButton = document.getElementById('copy-button');
+    this.responseArea = this.qs('.data-response');
+    this.theImage = this.qs('#the-image');
+    this.imageUrlDisplay = this.qs('#image-response-url');
+    this.copyButton = this.qs('#copy-button');
+    this.instructionText = this.qs('.dropzone__instruction__text');
     this.notificationController = new NotificationController();
+  }
+
+  /**
+   * Get the DOM via query selector short hand
+   * @param {String} selector
+   */
+  // eslint-disable-next-line class-methods-use-this
+  qs(selector) {
+    return document.querySelector(selector);
   }
 
   /**
