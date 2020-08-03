@@ -45,11 +45,6 @@
       <!-- App drop zone -->
       <div class="app__dropzone dropzone">
         <div class="dropzone__instruction">
-          <!-- <img
-            class="dropzone__instruction__icon"
-            src="./assets/images/upload-to-the-cloud.svg"
-            alt="Upload an image"
-          /> -->
           <div class="dropzone__instruction__icon"></div>
           <p class="dropzone__instruction__text">
             Drop an image file here or click here to select image
@@ -67,7 +62,7 @@
         <div class="data-response__item">
           <img
             id="the-image"
-            src="./assets/images/loading-spin.svg"
+            src="./assets/images/image.svg"
             alt="The image uploade"
           />
           <div class="data-response__action">
@@ -80,11 +75,12 @@
       <!-- Loading area -->
       <div class="app__loading loading d-none">
         <div class="preloader">
-          <img
-            class="loading__icon"
-            alt="Loading..."
-            src="./assets/images/loading-spin.svg"
-          />
+          <div class="preloader__absolute">
+            <div class="preloader__item"></div>
+            <div class="preloader__item"></div>
+            <div class="preloader__item"></div>
+            <div class="preloader__item"></div>
+          </div>
         </div>
       </div>
 
