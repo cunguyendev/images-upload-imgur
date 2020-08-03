@@ -7,7 +7,7 @@ export default class NotificationController {
   constructor() {
     this.notificationView = new NotificationView();
     this.notificationTick = null;
-    this.notificationTimeout = 500;
+    this.notificationTimeout = 7;
   }
 
   /**
@@ -41,12 +41,12 @@ export default class NotificationController {
    * Handle for dimiss notification after time
    */
   dismissTimeout() {
-    this.notificationTimeout = 500;
+    this.notificationTimeout = 7;
     this.notificationTick = setInterval(() => {
       this.notificationTimeout -= 1;
 
       if (this.notificationTimeout <= 0) {
-        this.notificationTimeout = 500;
+        this.notificationTimeout = 7;
         this.dismissNotication();
       }
     }, 1000);
