@@ -12,7 +12,6 @@
 
       strong {
         position: relative;
-        white-space: nowrap;
         font-weight: 500;
 
         &::after {
@@ -25,7 +24,7 @@
           content: '';
           top: 12%;
           left: -2%;
-          width: 106%;
+          width: 100%;
         }
       }
     }

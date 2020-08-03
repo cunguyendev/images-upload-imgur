@@ -29,7 +29,7 @@
       <!-- App heading -->
       <div class="app__heading heading">
         <h1 class="heading__title">
-          <strong>Upload Image With Imgur API</strong>
+          <strong>Image Upload with Imgur</strong>
         </h1>
         <p class="heading__description">
           <a
@@ -66,7 +66,7 @@
             alt="The image uploade"
           />
           <div class="data-response__action">
-            <input type="text" id="image-response-url" />
+            <input type="text" id="image-response-url" disabled />
             <button class="btn btn--default" id="copy-button">Copy</button>
           </div>
         </div>
@@ -81,6 +81,7 @@
             <div class="preloader__item"></div>
             <div class="preloader__item"></div>
           </div>
+          <p class="preloader__processing">Loading...</p>
         </div>
       </div>
 
