@@ -62,7 +62,7 @@ class App {
    * @param {File} image
    */
   uploadImage(image) {
-    const imgur = new Imgur('4409588f10776f7');
+    const imgur = new Imgur('9d41fa5df737ec2');
 
     imgur.post(image, (response) => {
       const message =
