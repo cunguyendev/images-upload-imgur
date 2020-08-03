@@ -7,7 +7,27 @@
 
     &__title {
       font-size: 25px;
-      margin-top: 25px;
+      margin-top: 15px;
+      line-height: 48px;
+
+      strong {
+        position: relative;
+        white-space: nowrap;
+        font-weight: 500;
+
+        &::after {
+          background-image: url('../assets/images/hero-highlight.svg');
+          position: absolute;
+          height: 100%;
+          z-index: -1;
+          background-repeat: no-repeat;
+          background-size: 100%;
+          content: '';
+          top: 12%;
+          left: -2%;
+          width: 106%;
+        }
+      }
     }
 
     &__description {
