@@ -50,6 +50,10 @@
 
     &__dragging {
       border-color: #000;
+
+      .dropzone__instruction__icon {
+        background-image: url('../assets/images/upload.svg');
+      }
     }
 
     &__instruction {
@@ -61,7 +65,7 @@
 
       &__icon {
         width: 10%;
-        background-image: url('../assets/images/upload-to-the-cloud.svg');
+        background-image: url('../assets/images/image.svg');
         background-repeat: no-repeat;
         background-size: cover;
         display: inline-block;

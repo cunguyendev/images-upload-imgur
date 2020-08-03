@@ -128,8 +128,11 @@ class App {
         ) {
           if (event === 'dragleave' || event === 'drop') {
             this.dropzone.classList.remove('dropzone__dragging');
+            this.instructionText.textContent =
+              'Drop an image file here or click here to select image';
           } else {
             this.dropzone.classList.add('dropzone__dragging');
+            this.instructionText.textContent = 'Drop here to upload';
           }
         }
       });
