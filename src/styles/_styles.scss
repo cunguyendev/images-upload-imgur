@@ -56,9 +56,18 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
+      height: 100%;
 
       &__icon {
         width: 10%;
+        background-image: url('../assets/images/upload-to-the-cloud.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        margin-top: 10px;
       }
 
       &__text {
