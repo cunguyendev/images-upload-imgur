@@ -115,11 +115,12 @@ class App {
       if (bytes === 0) return '0 Byte';
       const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)), 10);
 
-      return `${Math.round(bytes / (1024 ** i), 2)} ${sizes[i]}`;
+      return `${Math.round(bytes / 1024 ** i, 2)} ${sizes[i]}`;
     };
 
     if (file.type.match(/image/) && file.type !== 'image/svg+xml') {
-      this.processing.textContent = `Image size: ${bytesToSize(file.size)}. Uploading...`;
+      const size = bytesToSize(file.size);
+      this.processing.textContent = `Image size: ${size}. Uploading...`;
 
       const data = new FormData();
       data.append('image', file);
