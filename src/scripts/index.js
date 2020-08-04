@@ -197,6 +197,13 @@ class App {
       this.notificationController.displayNotification(this.success, message);
       this.isShowLoadingStatus(false);
     });
+
+    /**
+     * Handle for stop loading when DOM loaded
+     */
+    window.addEventListener('DOMContentLoaded', () => {
+      this.loading.classList.add('d-none');
+    });
   }
 }
 
