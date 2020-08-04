@@ -23,6 +23,7 @@ class App {
     this.copyButton = this.qs('#copy-button');
     this.instructionText = this.qs('.dropzone__instruction__text');
     this.clientKey = process.env.CLIENT_KEY;
+    this.processing = this.qs('.preloader__processing');
     this.notificationController = new NotificationController();
   }
 
@@ -105,7 +106,21 @@ class App {
     this.responseArea.classList.remove('d-flex');
     this.responseArea.classList.add('d-none');
 
+    /**
+     * Calculator the size of the file
+     * @param {Number} bytes
+     */
+    const bytesToSize = (bytes) => {
+      const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+      if (bytes === 0) return '0 Byte';
+      const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)), 10);
+
+      return `${Math.round(bytes / (1024 ** i), 2)} ${sizes[i]}`;
+    };
+
     if (file.type.match(/image/) && file.type !== 'image/svg+xml') {
+      this.processing.textContent = `Image size: ${bytesToSize(file.size)}. Uploading...`;
+
       const data = new FormData();
       data.append('image', file);
 
