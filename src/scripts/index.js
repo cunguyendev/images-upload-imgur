@@ -190,13 +190,19 @@ class App {
      * Handle for copy the image url
      */
     this.copyButton.addEventListener('click', () => {
-      this.imageUrlDisplay.select();
-      this.imageUrlDisplay.setSelectionRange(0, 99999);
-      document.execCommand('copy');
-
-      const message = 'The image URL has been copied to the clipboard.';
-      this.notificationController.displayNotification(this.success, message);
-      this.isShowLoadingStatus(false);
+      try {
+        this.imageUrlDisplay.select();
+        this.imageUrlDisplay.setSelectionRange(0, 99999);
+        document.execCommand('copy');
+        const message = 'The image URL has been copied to the clipboard.';
+        this.notificationController.displayNotification(this.success, message);
+        this.isShowLoadingStatus(false);
+      } catch (error) {
+        const message =
+          'Somewhing went wrong! Can not copy this link in this time.';
+        this.notificationController.displayNotification(this.success, message);
+        this.isShowLoadingStatus(false);
+      }
     });
 
     /**
