@@ -4,7 +4,7 @@
  */
 
 import NotificationController from './controllers/notificationController';
-import Imgur from './imgur';
+import ImageBB from './imagebb';
 
 class App {
   /**
@@ -64,9 +64,9 @@ class App {
    * @param {File} image
    */
   uploadImage(image) {
-    const imgur = new Imgur(this.clientKey);
+    const imagebb = new ImageBB();
 
-    imgur.post(image, (response) => {
+    imagebb.post(image, (response) => {
       if (response.status) {
         const message =
           "Your image was uploaded successfully. It's will show you in a few seconds.";
@@ -74,7 +74,7 @@ class App {
         this.notificationController.displayNotification(this.success, message);
         this.responseArea.classList.remove('d-none');
         this.responseArea.classList.add('d-flex');
-        this.displayImages(response.data.link);
+        this.displayImages(response.data.url);
       } else {
         const message =
           "Something went wrong. Let's comeback in a few minutes. ";
