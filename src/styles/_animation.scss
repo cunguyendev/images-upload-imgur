@@ -1,25 +1,13 @@
-@keyframes codehub {
-  0% {
-    color: red;
-  }
-  15% {
-    color: orange;
-  }
-  30% {
-    color: yellow;
-  }
-  45% {
-    color: greenyellow;
-  }
-  60% {
-    color: darkorange;
-  }
-  75% {
-    color: deepskyblue;
-  }
-  100% {
-    color: violet;
-  }
+// Animation syntax
+// animation: bounce 1s infinite;
+// animation: bounce 1s;
+
+.codehub {
+  animation: bounce 1s infinite;
+}
+
+.codehub-v2 {
+  animation: bounce 1s;
 }
 
 @-webkit-keyframes bounce {

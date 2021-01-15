@@ -3,17 +3,98 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Images optimization example</title>
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Google+Sans+Display:400,500"
-      rel="stylesheet"
+    <title>Upload image with Imgur API</title>
+    <meta property="title" content="Upload Image With Imgur API" />
+    <meta property="site_name" content="Upload Image With Imgur API" />
+    <meta property="type" content="website" />
+    <meta property="url" content="https://images-upload-imgur.netlify.app" />
+    <meta
+      name="description"
+      content="An app to upload images to Imgur API from HTML/CSS/JS"
     />
+    <meta
+      property="og:description"
+      content="An app to upload images to Imgur API from HTML/CSS/JS"
+    />
+    <link rel="canonical" href="https://github.com/cunguyendev" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./styles/main.scss" />
   </head>
   <body>
+    <!-- Displayed if scripts are not supported -->
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
     <!-- Main app -->
-    <main class="app"></main>
+    <main class="app">
+      <!-- App heading -->
+      <div class="app__heading heading">
+        <h1 class="heading__title">
+          <strong>Image Upload with Imgur</strong>
+        </h1>
+        <p class="heading__description">
+          <a
+            href="https://github.com/cunguyendev/images-upload-imgur"
+            title="View on Github"
+            target="_blank"
+          >
+            https://github.com/cunguyendev/images-upload-imgur
+          </a>
+        </p>
+      </div>
+
+      <!-- App drop zone -->
+      <div class="app__dropzone dropzone">
+        <div class="dropzone__instruction">
+          <div class="dropzone__instruction__icon"></div>
+          <p class="dropzone__instruction__text">
+            Drop an image file here or click here to select image
+          </p>
+        </div>
+        <input
+          type="file"
+          class="app__file-import file-import"
+          accept="image/*"
+        />
+      </div>
+
+      <!-- Show image area -->
+      <div class="app__data-response data-response d-none">
+        <div class="data-response__item">
+          <img
+            id="the-image"
+            src="./assets/images/image.svg"
+            alt="The image uploade"
+          />
+          <div class="data-response__action">
+            <input type="text" id="image-response-url" />
+            <button class="btn btn--default" id="copy-button">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading area -->
+      <div class="app__loading loading">
+        <div class="preloader">
+          <div class="preloader__absolute">
+            <div class="preloader__item"></div>
+            <div class="preloader__item"></div>
+            <div class="preloader__item"></div>
+            <div class="preloader__item"></div>
+          </div>
+          <p class="preloader__processing">Loading...</p>
+        </div>
+      </div>
+
+      <!-- Notification area -->
+      <div class="notification">
+        <div class="alert notification__content">
+          <span class="notification__description"></span>
+          <span class="notification__actions dismiss">
+            <i class="fa fa-close"></i>
+          </span>
+        </div>
+      </div>
+    </main>
   </body>
 
   <script src="./scripts/index.js"></script>

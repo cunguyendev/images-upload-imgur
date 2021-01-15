@@ -1,10 +1,12 @@
-# Images optimize
+# Images upload with Imgur
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ab0d7047-bb06-4f4e-a783-451c2c10bd8e/deploy-status)](https://images-optimize.netlify.app/)
 
 Created with HTML/CSS/JS, and Parcel (Web application bundle)
 
 Author: Cu Nguyen &lt;[cunguyen.dev@gmail.com](cnguyen.dev@gmail.com)&gt;
 
-Deploy to Netlify: [https://images-optimize.netlify.app/](https://images-optimize.netlify.app/)
+Deploy to Netlify: [https://images-upload-imgur.netlify.app/](https://images-upload-imgur.netlify.app/)
 
 ## Requirements
 

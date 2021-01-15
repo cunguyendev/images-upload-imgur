@@ -1,0 +1,171 @@
+.app {
+  padding-bottom: 140px;
+
+  .heading {
+    text-align: center;
+    margin-bottom: 40px;
+
+    &__title {
+      animation: slideInDown 1s;
+      font-size: 25px;
+      margin-top: 15px;
+      line-height: 48px;
+
+      strong {
+        position: relative;
+        font-weight: 500;
+
+        &::after {
+          background-image: url('../assets/images/hero-highlight.svg');
+          position: absolute;
+          height: 100%;
+          z-index: -1;
+          background-repeat: no-repeat;
+          background-size: 100%;
+          content: '';
+          top: 12%;
+          left: -2%;
+          width: 100%;
+        }
+      }
+    }
+
+    &__description {
+      animation: slideInUp 1s;
+      font-size: 16px;
+      padding: 10px 0;
+    }
+  }
+
+  .loading {
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .dropzone {
+    animation: fadeIn 1s;
+    border: 2px dashed #ccc;
+    height: 150px;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: calc(100% - 30px);
+
+    @include sm {
+      max-width: 50%;
+    }
+
+    &__dragging {
+      border-color: #000;
+
+      .dropzone__instruction__icon {
+        background-image: url('../assets/images/upload.svg');
+      }
+    }
+
+    &__instruction {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+
+      &__icon {
+        width: 10%;
+        background-image: url('../assets/images/image.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        margin-top: 10px;
+      }
+
+      &__text {
+        padding: 0 15px;
+        margin-top: 10px;
+        text-align: center;
+      }
+    }
+  }
+
+  .file-import {
+    height: 100%;
+    left: 0;
+    outline: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .data-response {
+    justify-content: center;
+    margin-top: 25px;
+
+    &__item {
+      padding: 0 25px;
+      text-align: center;
+
+      img {
+        max-width: 150px;
+      }
+    }
+
+    &__action {
+      margin: 25px 0;
+      display: flex;
+      align-items: center;
+
+      input {
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+        text-align: center;
+        border: 1px solid #d8d8d8;
+        cursor: pointer;
+        height: 32px;
+        font-size: 14px;
+        border-radius: 2px;
+        margin: 0;
+        padding: 0 10px;
+        margin-right: 15px;
+        width: 100%;
+      }
+
+      button {
+        height: 100%;
+      }
+    }
+  }
+
+  .btn {
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+    line-height: 1.5715;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+    height: 32px;
+    padding: 4px 15px;
+    font-size: 14px;
+    border-radius: 2px;
+
+    &--default {
+      color: #fff;
+      background: #1890ff;
+      border-color: #1890ff;
+    }
+  }
+}
